@@ -1,4 +1,4 @@
-module github.com/ImamTry257/lms-proto-question
+module github.com/ImamTry257/lms-proto-learning
 
 go 1.24.1
 
