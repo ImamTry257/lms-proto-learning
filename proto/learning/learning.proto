@@ -309,7 +309,7 @@ message GetByUuidRequest {
 }
 
 
-service ClassService {
+service LearningService {
     // Class
     rpc GetAll(ListClassRequest) returns (ListClassResponse);
     rpc GetAllClassName(ListClassRequest) returns (ListClassNameResponse);

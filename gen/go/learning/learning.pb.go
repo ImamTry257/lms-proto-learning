@@ -3086,8 +3086,8 @@ const file_learning_proto_rawDesc = "" +
 	"\x0eGetByIdRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"#\n" +
 	"\x10GetByUuidRequest\x12\x0f\n" +
-	"\x03id_\x18\x01 \x01(\tR\x02id2\xcf\x16\n" +
-	"\fClassService\x12G\n" +
+	"\x03id_\x18\x01 \x01(\tR\x02id2\xd2\x16\n" +
+	"\x0fLearningService\x12G\n" +
 	"\x06GetAll\x12\x1d.learning.v1.ListClassRequest\x1a\x1e.learning.v1.ListClassResponse\x12T\n" +
 	"\x0fGetAllClassName\x12\x1d.learning.v1.ListClassRequest\x1a\".learning.v1.ListClassNameResponse\x12@\n" +
 	"\x06Create\x12\x19.learning.v1.ClassRequest\x1a\x1b.learning.v1.ActionResponse\x12@\n" +
@@ -3214,76 +3214,76 @@ var file_learning_proto_depIdxs = []int32{
 	33, // 37: learning.v1.ContentCategoriesResponse.deleted_at:type_name -> google.protobuf.Timestamp
 	27, // 38: learning.v1.ListContentCategoriesNameResponse.data:type_name -> learning.v1.ContentCategoriesNameResponse
 	26, // 39: learning.v1.ListContentCategoriesResponse.data:type_name -> learning.v1.ContentCategoriesResponse
-	0,  // 40: learning.v1.ClassService.GetAll:input_type -> learning.v1.ListClassRequest
-	0,  // 41: learning.v1.ClassService.GetAllClassName:input_type -> learning.v1.ListClassRequest
-	1,  // 42: learning.v1.ClassService.Create:input_type -> learning.v1.ClassRequest
-	1,  // 43: learning.v1.ClassService.Update:input_type -> learning.v1.ClassRequest
-	31, // 44: learning.v1.ClassService.GetById:input_type -> learning.v1.GetByIdRequest
-	32, // 45: learning.v1.ClassService.GetByUuid:input_type -> learning.v1.GetByUuidRequest
-	32, // 46: learning.v1.ClassService.Delete:input_type -> learning.v1.GetByUuidRequest
-	6,  // 47: learning.v1.ClassService.GetAllLesson:input_type -> learning.v1.ListLessonRequest
-	6,  // 48: learning.v1.ClassService.GetAllLessonName:input_type -> learning.v1.ListLessonRequest
-	1,  // 49: learning.v1.ClassService.CreateLesson:input_type -> learning.v1.ClassRequest
-	1,  // 50: learning.v1.ClassService.UpdateLesson:input_type -> learning.v1.ClassRequest
-	31, // 51: learning.v1.ClassService.GetLessonById:input_type -> learning.v1.GetByIdRequest
-	32, // 52: learning.v1.ClassService.GetLessonByUuid:input_type -> learning.v1.GetByUuidRequest
-	32, // 53: learning.v1.ClassService.DeleteLesson:input_type -> learning.v1.GetByUuidRequest
-	12, // 54: learning.v1.ClassService.GetAllLessonItem:input_type -> learning.v1.ListLessonItemRequest
-	12, // 55: learning.v1.ClassService.GetAllLessonItemName:input_type -> learning.v1.ListLessonItemRequest
-	1,  // 56: learning.v1.ClassService.CreateLessonItem:input_type -> learning.v1.ClassRequest
-	1,  // 57: learning.v1.ClassService.UpdateLessonItem:input_type -> learning.v1.ClassRequest
-	31, // 58: learning.v1.ClassService.GetLessonItemById:input_type -> learning.v1.GetByIdRequest
-	32, // 59: learning.v1.ClassService.GetLessonItemByUuid:input_type -> learning.v1.GetByUuidRequest
-	32, // 60: learning.v1.ClassService.DeleteLessonItem:input_type -> learning.v1.GetByUuidRequest
-	18, // 61: learning.v1.ClassService.GetAllContent:input_type -> learning.v1.ListContentRequest
-	18, // 62: learning.v1.ClassService.GetAllContentName:input_type -> learning.v1.ListContentRequest
-	1,  // 63: learning.v1.ClassService.CreateContent:input_type -> learning.v1.ClassRequest
-	1,  // 64: learning.v1.ClassService.UpdateContent:input_type -> learning.v1.ClassRequest
-	31, // 65: learning.v1.ClassService.GetContentById:input_type -> learning.v1.GetByIdRequest
-	32, // 66: learning.v1.ClassService.GetContentByUuid:input_type -> learning.v1.GetByUuidRequest
-	32, // 67: learning.v1.ClassService.DeleteContent:input_type -> learning.v1.GetByUuidRequest
-	24, // 68: learning.v1.ClassService.GetAllContentCategories:input_type -> learning.v1.ListContentCategoriesRequest
-	24, // 69: learning.v1.ClassService.GetAllContentCategoriesName:input_type -> learning.v1.ListContentCategoriesRequest
-	1,  // 70: learning.v1.ClassService.CreateContentCategories:input_type -> learning.v1.ClassRequest
-	1,  // 71: learning.v1.ClassService.UpdateContentCategories:input_type -> learning.v1.ClassRequest
-	31, // 72: learning.v1.ClassService.GetContentCategoriesById:input_type -> learning.v1.GetByIdRequest
-	32, // 73: learning.v1.ClassService.GetContentCategoriesByUuid:input_type -> learning.v1.GetByUuidRequest
-	32, // 74: learning.v1.ClassService.DeleteContentCategories:input_type -> learning.v1.GetByUuidRequest
-	5,  // 75: learning.v1.ClassService.GetAll:output_type -> learning.v1.ListClassResponse
-	4,  // 76: learning.v1.ClassService.GetAllClassName:output_type -> learning.v1.ListClassNameResponse
-	30, // 77: learning.v1.ClassService.Create:output_type -> learning.v1.ActionResponse
-	30, // 78: learning.v1.ClassService.Update:output_type -> learning.v1.ActionResponse
-	2,  // 79: learning.v1.ClassService.GetById:output_type -> learning.v1.ClassResponse
-	2,  // 80: learning.v1.ClassService.GetByUuid:output_type -> learning.v1.ClassResponse
-	30, // 81: learning.v1.ClassService.Delete:output_type -> learning.v1.ActionResponse
-	6,  // 82: learning.v1.ClassService.GetAllLesson:output_type -> learning.v1.ListLessonRequest
-	10, // 83: learning.v1.ClassService.GetAllLessonName:output_type -> learning.v1.ListLessonNameResponse
-	30, // 84: learning.v1.ClassService.CreateLesson:output_type -> learning.v1.ActionResponse
-	30, // 85: learning.v1.ClassService.UpdateLesson:output_type -> learning.v1.ActionResponse
-	8,  // 86: learning.v1.ClassService.GetLessonById:output_type -> learning.v1.LessonResponse
-	8,  // 87: learning.v1.ClassService.GetLessonByUuid:output_type -> learning.v1.LessonResponse
-	30, // 88: learning.v1.ClassService.DeleteLesson:output_type -> learning.v1.ActionResponse
-	12, // 89: learning.v1.ClassService.GetAllLessonItem:output_type -> learning.v1.ListLessonItemRequest
-	16, // 90: learning.v1.ClassService.GetAllLessonItemName:output_type -> learning.v1.ListLessonItemNameResponse
-	30, // 91: learning.v1.ClassService.CreateLessonItem:output_type -> learning.v1.ActionResponse
-	30, // 92: learning.v1.ClassService.UpdateLessonItem:output_type -> learning.v1.ActionResponse
-	14, // 93: learning.v1.ClassService.GetLessonItemById:output_type -> learning.v1.LessonItemResponse
-	14, // 94: learning.v1.ClassService.GetLessonItemByUuid:output_type -> learning.v1.LessonItemResponse
-	30, // 95: learning.v1.ClassService.DeleteLessonItem:output_type -> learning.v1.ActionResponse
-	18, // 96: learning.v1.ClassService.GetAllContent:output_type -> learning.v1.ListContentRequest
-	22, // 97: learning.v1.ClassService.GetAllContentName:output_type -> learning.v1.ListContentNameResponse
-	30, // 98: learning.v1.ClassService.CreateContent:output_type -> learning.v1.ActionResponse
-	30, // 99: learning.v1.ClassService.UpdateContent:output_type -> learning.v1.ActionResponse
-	20, // 100: learning.v1.ClassService.GetContentById:output_type -> learning.v1.ContentResponse
-	20, // 101: learning.v1.ClassService.GetContentByUuid:output_type -> learning.v1.ContentResponse
-	30, // 102: learning.v1.ClassService.DeleteContent:output_type -> learning.v1.ActionResponse
-	24, // 103: learning.v1.ClassService.GetAllContentCategories:output_type -> learning.v1.ListContentCategoriesRequest
-	28, // 104: learning.v1.ClassService.GetAllContentCategoriesName:output_type -> learning.v1.ListContentCategoriesNameResponse
-	30, // 105: learning.v1.ClassService.CreateContentCategories:output_type -> learning.v1.ActionResponse
-	30, // 106: learning.v1.ClassService.UpdateContentCategories:output_type -> learning.v1.ActionResponse
-	26, // 107: learning.v1.ClassService.GetContentCategoriesById:output_type -> learning.v1.ContentCategoriesResponse
-	26, // 108: learning.v1.ClassService.GetContentCategoriesByUuid:output_type -> learning.v1.ContentCategoriesResponse
-	30, // 109: learning.v1.ClassService.DeleteContentCategories:output_type -> learning.v1.ActionResponse
+	0,  // 40: learning.v1.LearningService.GetAll:input_type -> learning.v1.ListClassRequest
+	0,  // 41: learning.v1.LearningService.GetAllClassName:input_type -> learning.v1.ListClassRequest
+	1,  // 42: learning.v1.LearningService.Create:input_type -> learning.v1.ClassRequest
+	1,  // 43: learning.v1.LearningService.Update:input_type -> learning.v1.ClassRequest
+	31, // 44: learning.v1.LearningService.GetById:input_type -> learning.v1.GetByIdRequest
+	32, // 45: learning.v1.LearningService.GetByUuid:input_type -> learning.v1.GetByUuidRequest
+	32, // 46: learning.v1.LearningService.Delete:input_type -> learning.v1.GetByUuidRequest
+	6,  // 47: learning.v1.LearningService.GetAllLesson:input_type -> learning.v1.ListLessonRequest
+	6,  // 48: learning.v1.LearningService.GetAllLessonName:input_type -> learning.v1.ListLessonRequest
+	1,  // 49: learning.v1.LearningService.CreateLesson:input_type -> learning.v1.ClassRequest
+	1,  // 50: learning.v1.LearningService.UpdateLesson:input_type -> learning.v1.ClassRequest
+	31, // 51: learning.v1.LearningService.GetLessonById:input_type -> learning.v1.GetByIdRequest
+	32, // 52: learning.v1.LearningService.GetLessonByUuid:input_type -> learning.v1.GetByUuidRequest
+	32, // 53: learning.v1.LearningService.DeleteLesson:input_type -> learning.v1.GetByUuidRequest
+	12, // 54: learning.v1.LearningService.GetAllLessonItem:input_type -> learning.v1.ListLessonItemRequest
+	12, // 55: learning.v1.LearningService.GetAllLessonItemName:input_type -> learning.v1.ListLessonItemRequest
+	1,  // 56: learning.v1.LearningService.CreateLessonItem:input_type -> learning.v1.ClassRequest
+	1,  // 57: learning.v1.LearningService.UpdateLessonItem:input_type -> learning.v1.ClassRequest
+	31, // 58: learning.v1.LearningService.GetLessonItemById:input_type -> learning.v1.GetByIdRequest
+	32, // 59: learning.v1.LearningService.GetLessonItemByUuid:input_type -> learning.v1.GetByUuidRequest
+	32, // 60: learning.v1.LearningService.DeleteLessonItem:input_type -> learning.v1.GetByUuidRequest
+	18, // 61: learning.v1.LearningService.GetAllContent:input_type -> learning.v1.ListContentRequest
+	18, // 62: learning.v1.LearningService.GetAllContentName:input_type -> learning.v1.ListContentRequest
+	1,  // 63: learning.v1.LearningService.CreateContent:input_type -> learning.v1.ClassRequest
+	1,  // 64: learning.v1.LearningService.UpdateContent:input_type -> learning.v1.ClassRequest
+	31, // 65: learning.v1.LearningService.GetContentById:input_type -> learning.v1.GetByIdRequest
+	32, // 66: learning.v1.LearningService.GetContentByUuid:input_type -> learning.v1.GetByUuidRequest
+	32, // 67: learning.v1.LearningService.DeleteContent:input_type -> learning.v1.GetByUuidRequest
+	24, // 68: learning.v1.LearningService.GetAllContentCategories:input_type -> learning.v1.ListContentCategoriesRequest
+	24, // 69: learning.v1.LearningService.GetAllContentCategoriesName:input_type -> learning.v1.ListContentCategoriesRequest
+	1,  // 70: learning.v1.LearningService.CreateContentCategories:input_type -> learning.v1.ClassRequest
+	1,  // 71: learning.v1.LearningService.UpdateContentCategories:input_type -> learning.v1.ClassRequest
+	31, // 72: learning.v1.LearningService.GetContentCategoriesById:input_type -> learning.v1.GetByIdRequest
+	32, // 73: learning.v1.LearningService.GetContentCategoriesByUuid:input_type -> learning.v1.GetByUuidRequest
+	32, // 74: learning.v1.LearningService.DeleteContentCategories:input_type -> learning.v1.GetByUuidRequest
+	5,  // 75: learning.v1.LearningService.GetAll:output_type -> learning.v1.ListClassResponse
+	4,  // 76: learning.v1.LearningService.GetAllClassName:output_type -> learning.v1.ListClassNameResponse
+	30, // 77: learning.v1.LearningService.Create:output_type -> learning.v1.ActionResponse
+	30, // 78: learning.v1.LearningService.Update:output_type -> learning.v1.ActionResponse
+	2,  // 79: learning.v1.LearningService.GetById:output_type -> learning.v1.ClassResponse
+	2,  // 80: learning.v1.LearningService.GetByUuid:output_type -> learning.v1.ClassResponse
+	30, // 81: learning.v1.LearningService.Delete:output_type -> learning.v1.ActionResponse
+	6,  // 82: learning.v1.LearningService.GetAllLesson:output_type -> learning.v1.ListLessonRequest
+	10, // 83: learning.v1.LearningService.GetAllLessonName:output_type -> learning.v1.ListLessonNameResponse
+	30, // 84: learning.v1.LearningService.CreateLesson:output_type -> learning.v1.ActionResponse
+	30, // 85: learning.v1.LearningService.UpdateLesson:output_type -> learning.v1.ActionResponse
+	8,  // 86: learning.v1.LearningService.GetLessonById:output_type -> learning.v1.LessonResponse
+	8,  // 87: learning.v1.LearningService.GetLessonByUuid:output_type -> learning.v1.LessonResponse
+	30, // 88: learning.v1.LearningService.DeleteLesson:output_type -> learning.v1.ActionResponse
+	12, // 89: learning.v1.LearningService.GetAllLessonItem:output_type -> learning.v1.ListLessonItemRequest
+	16, // 90: learning.v1.LearningService.GetAllLessonItemName:output_type -> learning.v1.ListLessonItemNameResponse
+	30, // 91: learning.v1.LearningService.CreateLessonItem:output_type -> learning.v1.ActionResponse
+	30, // 92: learning.v1.LearningService.UpdateLessonItem:output_type -> learning.v1.ActionResponse
+	14, // 93: learning.v1.LearningService.GetLessonItemById:output_type -> learning.v1.LessonItemResponse
+	14, // 94: learning.v1.LearningService.GetLessonItemByUuid:output_type -> learning.v1.LessonItemResponse
+	30, // 95: learning.v1.LearningService.DeleteLessonItem:output_type -> learning.v1.ActionResponse
+	18, // 96: learning.v1.LearningService.GetAllContent:output_type -> learning.v1.ListContentRequest
+	22, // 97: learning.v1.LearningService.GetAllContentName:output_type -> learning.v1.ListContentNameResponse
+	30, // 98: learning.v1.LearningService.CreateContent:output_type -> learning.v1.ActionResponse
+	30, // 99: learning.v1.LearningService.UpdateContent:output_type -> learning.v1.ActionResponse
+	20, // 100: learning.v1.LearningService.GetContentById:output_type -> learning.v1.ContentResponse
+	20, // 101: learning.v1.LearningService.GetContentByUuid:output_type -> learning.v1.ContentResponse
+	30, // 102: learning.v1.LearningService.DeleteContent:output_type -> learning.v1.ActionResponse
+	24, // 103: learning.v1.LearningService.GetAllContentCategories:output_type -> learning.v1.ListContentCategoriesRequest
+	28, // 104: learning.v1.LearningService.GetAllContentCategoriesName:output_type -> learning.v1.ListContentCategoriesNameResponse
+	30, // 105: learning.v1.LearningService.CreateContentCategories:output_type -> learning.v1.ActionResponse
+	30, // 106: learning.v1.LearningService.UpdateContentCategories:output_type -> learning.v1.ActionResponse
+	26, // 107: learning.v1.LearningService.GetContentCategoriesById:output_type -> learning.v1.ContentCategoriesResponse
+	26, // 108: learning.v1.LearningService.GetContentCategoriesByUuid:output_type -> learning.v1.ContentCategoriesResponse
+	30, // 109: learning.v1.LearningService.DeleteContentCategories:output_type -> learning.v1.ActionResponse
 	75, // [75:110] is the sub-list for method output_type
 	40, // [40:75] is the sub-list for method input_type
 	40, // [40:40] is the sub-list for extension type_name
