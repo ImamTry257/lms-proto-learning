@@ -322,7 +322,7 @@ service LearningService {
     rpc Delete(GetByUuidRequest) returns (ActionResponse);
 
     // Lesson
-    rpc GetAllLesson(ListLessonRequest) returns (ListLessonRequest);
+    rpc GetAllLesson(ListLessonRequest) returns (ListLessonResponse);
     rpc GetAllLessonName(ListLessonRequest) returns (ListLessonNameResponse);
     rpc CreateLesson(ClassRequest) returns (ActionResponse);
     rpc UpdateLesson(ClassRequest) returns (ActionResponse);
@@ -331,7 +331,7 @@ service LearningService {
     rpc DeleteLesson(GetByUuidRequest) returns (ActionResponse);
 
     // Lesson Item
-    rpc GetAllLessonItem(ListLessonItemRequest) returns (ListLessonItemRequest);
+    rpc GetAllLessonItem(ListLessonItemRequest) returns (ListLessonItemResponse);
     rpc GetAllLessonItemName(ListLessonItemRequest) returns (ListLessonItemNameResponse);
     rpc CreateLessonItem(ClassRequest) returns (ActionResponse);
     rpc UpdateLessonItem(ClassRequest) returns (ActionResponse);
@@ -340,7 +340,7 @@ service LearningService {
     rpc DeleteLessonItem(GetByUuidRequest) returns (ActionResponse);
 
     // Content
-    rpc GetAllContent(ListContentRequest) returns (ListContentRequest);
+    rpc GetAllContent(ListContentRequest) returns (ListContentResponse);
     rpc GetAllContentName(ListContentRequest) returns (ListContentNameResponse);
     rpc CreateContent(ClassRequest) returns (ActionResponse);
     rpc UpdateContent(ClassRequest) returns (ActionResponse);
@@ -349,7 +349,7 @@ service LearningService {
     rpc DeleteContent(GetByUuidRequest) returns (ActionResponse);
 
     // ContentCategories
-    rpc GetAllContentCategories(ListContentCategoriesRequest) returns (ListContentCategoriesRequest);
+    rpc GetAllContentCategories(ListContentCategoriesRequest) returns (ListContentCategoriesResponse);
     rpc GetAllContentCategoriesName(ListContentCategoriesRequest) returns (ListContentCategoriesNameResponse);
     rpc CreateContentCategories(ClassRequest) returns (ActionResponse);
     rpc UpdateContentCategories(ClassRequest) returns (ActionResponse);

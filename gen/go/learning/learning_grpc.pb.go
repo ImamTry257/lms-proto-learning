@@ -72,7 +72,7 @@ type LearningServiceClient interface {
 	GetByUuid(ctx context.Context, in *GetByUuidRequest, opts ...grpc.CallOption) (*ClassResponse, error)
 	Delete(ctx context.Context, in *GetByUuidRequest, opts ...grpc.CallOption) (*ActionResponse, error)
 	// Lesson
-	GetAllLesson(ctx context.Context, in *ListLessonRequest, opts ...grpc.CallOption) (*ListLessonRequest, error)
+	GetAllLesson(ctx context.Context, in *ListLessonRequest, opts ...grpc.CallOption) (*ListLessonResponse, error)
 	GetAllLessonName(ctx context.Context, in *ListLessonRequest, opts ...grpc.CallOption) (*ListLessonNameResponse, error)
 	CreateLesson(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error)
 	UpdateLesson(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error)
@@ -80,7 +80,7 @@ type LearningServiceClient interface {
 	GetLessonByUuid(ctx context.Context, in *GetByUuidRequest, opts ...grpc.CallOption) (*LessonResponse, error)
 	DeleteLesson(ctx context.Context, in *GetByUuidRequest, opts ...grpc.CallOption) (*ActionResponse, error)
 	// Lesson Item
-	GetAllLessonItem(ctx context.Context, in *ListLessonItemRequest, opts ...grpc.CallOption) (*ListLessonItemRequest, error)
+	GetAllLessonItem(ctx context.Context, in *ListLessonItemRequest, opts ...grpc.CallOption) (*ListLessonItemResponse, error)
 	GetAllLessonItemName(ctx context.Context, in *ListLessonItemRequest, opts ...grpc.CallOption) (*ListLessonItemNameResponse, error)
 	CreateLessonItem(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error)
 	UpdateLessonItem(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error)
@@ -88,7 +88,7 @@ type LearningServiceClient interface {
 	GetLessonItemByUuid(ctx context.Context, in *GetByUuidRequest, opts ...grpc.CallOption) (*LessonItemResponse, error)
 	DeleteLessonItem(ctx context.Context, in *GetByUuidRequest, opts ...grpc.CallOption) (*ActionResponse, error)
 	// Content
-	GetAllContent(ctx context.Context, in *ListContentRequest, opts ...grpc.CallOption) (*ListContentRequest, error)
+	GetAllContent(ctx context.Context, in *ListContentRequest, opts ...grpc.CallOption) (*ListContentResponse, error)
 	GetAllContentName(ctx context.Context, in *ListContentRequest, opts ...grpc.CallOption) (*ListContentNameResponse, error)
 	CreateContent(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error)
 	UpdateContent(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error)
@@ -96,7 +96,7 @@ type LearningServiceClient interface {
 	GetContentByUuid(ctx context.Context, in *GetByUuidRequest, opts ...grpc.CallOption) (*ContentResponse, error)
 	DeleteContent(ctx context.Context, in *GetByUuidRequest, opts ...grpc.CallOption) (*ActionResponse, error)
 	// ContentCategories
-	GetAllContentCategories(ctx context.Context, in *ListContentCategoriesRequest, opts ...grpc.CallOption) (*ListContentCategoriesRequest, error)
+	GetAllContentCategories(ctx context.Context, in *ListContentCategoriesRequest, opts ...grpc.CallOption) (*ListContentCategoriesResponse, error)
 	GetAllContentCategoriesName(ctx context.Context, in *ListContentCategoriesRequest, opts ...grpc.CallOption) (*ListContentCategoriesNameResponse, error)
 	CreateContentCategories(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error)
 	UpdateContentCategories(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error)
@@ -183,9 +183,9 @@ func (c *learningServiceClient) Delete(ctx context.Context, in *GetByUuidRequest
 	return out, nil
 }
 
-func (c *learningServiceClient) GetAllLesson(ctx context.Context, in *ListLessonRequest, opts ...grpc.CallOption) (*ListLessonRequest, error) {
+func (c *learningServiceClient) GetAllLesson(ctx context.Context, in *ListLessonRequest, opts ...grpc.CallOption) (*ListLessonResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListLessonRequest)
+	out := new(ListLessonResponse)
 	err := c.cc.Invoke(ctx, LearningService_GetAllLesson_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -253,9 +253,9 @@ func (c *learningServiceClient) DeleteLesson(ctx context.Context, in *GetByUuidR
 	return out, nil
 }
 
-func (c *learningServiceClient) GetAllLessonItem(ctx context.Context, in *ListLessonItemRequest, opts ...grpc.CallOption) (*ListLessonItemRequest, error) {
+func (c *learningServiceClient) GetAllLessonItem(ctx context.Context, in *ListLessonItemRequest, opts ...grpc.CallOption) (*ListLessonItemResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListLessonItemRequest)
+	out := new(ListLessonItemResponse)
 	err := c.cc.Invoke(ctx, LearningService_GetAllLessonItem_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -323,9 +323,9 @@ func (c *learningServiceClient) DeleteLessonItem(ctx context.Context, in *GetByU
 	return out, nil
 }
 
-func (c *learningServiceClient) GetAllContent(ctx context.Context, in *ListContentRequest, opts ...grpc.CallOption) (*ListContentRequest, error) {
+func (c *learningServiceClient) GetAllContent(ctx context.Context, in *ListContentRequest, opts ...grpc.CallOption) (*ListContentResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListContentRequest)
+	out := new(ListContentResponse)
 	err := c.cc.Invoke(ctx, LearningService_GetAllContent_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -393,9 +393,9 @@ func (c *learningServiceClient) DeleteContent(ctx context.Context, in *GetByUuid
 	return out, nil
 }
 
-func (c *learningServiceClient) GetAllContentCategories(ctx context.Context, in *ListContentCategoriesRequest, opts ...grpc.CallOption) (*ListContentCategoriesRequest, error) {
+func (c *learningServiceClient) GetAllContentCategories(ctx context.Context, in *ListContentCategoriesRequest, opts ...grpc.CallOption) (*ListContentCategoriesResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListContentCategoriesRequest)
+	out := new(ListContentCategoriesResponse)
 	err := c.cc.Invoke(ctx, LearningService_GetAllContentCategories_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -476,7 +476,7 @@ type LearningServiceServer interface {
 	GetByUuid(context.Context, *GetByUuidRequest) (*ClassResponse, error)
 	Delete(context.Context, *GetByUuidRequest) (*ActionResponse, error)
 	// Lesson
-	GetAllLesson(context.Context, *ListLessonRequest) (*ListLessonRequest, error)
+	GetAllLesson(context.Context, *ListLessonRequest) (*ListLessonResponse, error)
 	GetAllLessonName(context.Context, *ListLessonRequest) (*ListLessonNameResponse, error)
 	CreateLesson(context.Context, *ClassRequest) (*ActionResponse, error)
 	UpdateLesson(context.Context, *ClassRequest) (*ActionResponse, error)
@@ -484,7 +484,7 @@ type LearningServiceServer interface {
 	GetLessonByUuid(context.Context, *GetByUuidRequest) (*LessonResponse, error)
 	DeleteLesson(context.Context, *GetByUuidRequest) (*ActionResponse, error)
 	// Lesson Item
-	GetAllLessonItem(context.Context, *ListLessonItemRequest) (*ListLessonItemRequest, error)
+	GetAllLessonItem(context.Context, *ListLessonItemRequest) (*ListLessonItemResponse, error)
 	GetAllLessonItemName(context.Context, *ListLessonItemRequest) (*ListLessonItemNameResponse, error)
 	CreateLessonItem(context.Context, *ClassRequest) (*ActionResponse, error)
 	UpdateLessonItem(context.Context, *ClassRequest) (*ActionResponse, error)
@@ -492,7 +492,7 @@ type LearningServiceServer interface {
 	GetLessonItemByUuid(context.Context, *GetByUuidRequest) (*LessonItemResponse, error)
 	DeleteLessonItem(context.Context, *GetByUuidRequest) (*ActionResponse, error)
 	// Content
-	GetAllContent(context.Context, *ListContentRequest) (*ListContentRequest, error)
+	GetAllContent(context.Context, *ListContentRequest) (*ListContentResponse, error)
 	GetAllContentName(context.Context, *ListContentRequest) (*ListContentNameResponse, error)
 	CreateContent(context.Context, *ClassRequest) (*ActionResponse, error)
 	UpdateContent(context.Context, *ClassRequest) (*ActionResponse, error)
@@ -500,7 +500,7 @@ type LearningServiceServer interface {
 	GetContentByUuid(context.Context, *GetByUuidRequest) (*ContentResponse, error)
 	DeleteContent(context.Context, *GetByUuidRequest) (*ActionResponse, error)
 	// ContentCategories
-	GetAllContentCategories(context.Context, *ListContentCategoriesRequest) (*ListContentCategoriesRequest, error)
+	GetAllContentCategories(context.Context, *ListContentCategoriesRequest) (*ListContentCategoriesResponse, error)
 	GetAllContentCategoriesName(context.Context, *ListContentCategoriesRequest) (*ListContentCategoriesNameResponse, error)
 	CreateContentCategories(context.Context, *ClassRequest) (*ActionResponse, error)
 	UpdateContentCategories(context.Context, *ClassRequest) (*ActionResponse, error)
@@ -538,7 +538,7 @@ func (UnimplementedLearningServiceServer) GetByUuid(context.Context, *GetByUuidR
 func (UnimplementedLearningServiceServer) Delete(context.Context, *GetByUuidRequest) (*ActionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
 }
-func (UnimplementedLearningServiceServer) GetAllLesson(context.Context, *ListLessonRequest) (*ListLessonRequest, error) {
+func (UnimplementedLearningServiceServer) GetAllLesson(context.Context, *ListLessonRequest) (*ListLessonResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllLesson not implemented")
 }
 func (UnimplementedLearningServiceServer) GetAllLessonName(context.Context, *ListLessonRequest) (*ListLessonNameResponse, error) {
@@ -559,7 +559,7 @@ func (UnimplementedLearningServiceServer) GetLessonByUuid(context.Context, *GetB
 func (UnimplementedLearningServiceServer) DeleteLesson(context.Context, *GetByUuidRequest) (*ActionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteLesson not implemented")
 }
-func (UnimplementedLearningServiceServer) GetAllLessonItem(context.Context, *ListLessonItemRequest) (*ListLessonItemRequest, error) {
+func (UnimplementedLearningServiceServer) GetAllLessonItem(context.Context, *ListLessonItemRequest) (*ListLessonItemResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllLessonItem not implemented")
 }
 func (UnimplementedLearningServiceServer) GetAllLessonItemName(context.Context, *ListLessonItemRequest) (*ListLessonItemNameResponse, error) {
@@ -580,7 +580,7 @@ func (UnimplementedLearningServiceServer) GetLessonItemByUuid(context.Context, *
 func (UnimplementedLearningServiceServer) DeleteLessonItem(context.Context, *GetByUuidRequest) (*ActionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteLessonItem not implemented")
 }
-func (UnimplementedLearningServiceServer) GetAllContent(context.Context, *ListContentRequest) (*ListContentRequest, error) {
+func (UnimplementedLearningServiceServer) GetAllContent(context.Context, *ListContentRequest) (*ListContentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllContent not implemented")
 }
 func (UnimplementedLearningServiceServer) GetAllContentName(context.Context, *ListContentRequest) (*ListContentNameResponse, error) {
@@ -601,7 +601,7 @@ func (UnimplementedLearningServiceServer) GetContentByUuid(context.Context, *Get
 func (UnimplementedLearningServiceServer) DeleteContent(context.Context, *GetByUuidRequest) (*ActionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteContent not implemented")
 }
-func (UnimplementedLearningServiceServer) GetAllContentCategories(context.Context, *ListContentCategoriesRequest) (*ListContentCategoriesRequest, error) {
+func (UnimplementedLearningServiceServer) GetAllContentCategories(context.Context, *ListContentCategoriesRequest) (*ListContentCategoriesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllContentCategories not implemented")
 }
 func (UnimplementedLearningServiceServer) GetAllContentCategoriesName(context.Context, *ListContentCategoriesRequest) (*ListContentCategoriesNameResponse, error) {
