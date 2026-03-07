@@ -21,7 +21,7 @@ message ClassRequest {
     string merchant_id = 2;
     string name = 3;
     string code = 4;
-    string is_free = 5;
+    bool is_free = 5;
     string description = 6;
     string status = 7;
     string created_by = 8;
@@ -36,7 +36,7 @@ message ClassResponse {
     string merchant_id = 2;
     string name = 3;
     string code = 4;
-    string is_free = 5;
+    bool is_free = 5;
     string description = 6;
     string status = 7;
     string created_by = 8;
