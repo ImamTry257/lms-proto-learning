@@ -240,7 +240,7 @@ type ClassResponse struct {
 	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,10,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
 	DeletedAt     *timestamppb.Timestamp `protobuf:"bytes,12,opt,name=deleted_at,json=deletedAt,proto3" json:"deleted_at,omitempty"`
-	Data          []*LessonResponse      `protobuf:"bytes,13,rep,name=data,proto3" json:"data,omitempty"`
+	Lessons       []*LessonResponse      `protobuf:"bytes,13,rep,name=lessons,proto3" json:"lessons,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -359,9 +359,9 @@ func (x *ClassResponse) GetDeletedAt() *timestamppb.Timestamp {
 	return nil
 }
 
-func (x *ClassResponse) GetData() []*LessonResponse {
+func (x *ClassResponse) GetLessons() []*LessonResponse {
 	if x != nil {
-		return x.Data
+		return x.Lessons
 	}
 	return nil
 }
@@ -753,7 +753,7 @@ type LessonResponse struct {
 	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,10,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
 	DeletedAt     *timestamppb.Timestamp `protobuf:"bytes,12,opt,name=deleted_at,json=deletedAt,proto3" json:"deleted_at,omitempty"`
-	Data          []*LessonItemResponse  `protobuf:"bytes,13,rep,name=data,proto3" json:"data,omitempty"`
+	Lessonitems   []*LessonItemResponse  `protobuf:"bytes,13,rep,name=lessonitems,proto3" json:"lessonitems,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -872,9 +872,9 @@ func (x *LessonResponse) GetDeletedAt() *timestamppb.Timestamp {
 	return nil
 }
 
-func (x *LessonResponse) GetData() []*LessonItemResponse {
+func (x *LessonResponse) GetLessonitems() []*LessonItemResponse {
 	if x != nil {
-		return x.Data
+		return x.Lessonitems
 	}
 	return nil
 }
@@ -2815,7 +2815,7 @@ const file_learning_proto_rawDesc = "" +
 	"\n" +
 	"updated_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\x129\n" +
 	"\n" +
-	"deleted_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\tdeletedAt\"\xdf\x03\n" +
+	"deleted_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\tdeletedAt\"\xe5\x03\n" +
 	"\rClassResponse\x12\x12\n" +
 	"\x04uuid\x18\x01 \x01(\tR\x04uuid\x12\x1f\n" +
 	"\vmerchant_id\x18\x02 \x01(\tR\n" +
@@ -2835,8 +2835,8 @@ const file_learning_proto_rawDesc = "" +
 	"\n" +
 	"updated_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\x129\n" +
 	"\n" +
-	"deleted_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\tdeletedAt\x12/\n" +
-	"\x04data\x18\r \x03(\v2\x1b.learning.v1.LessonResponseR\x04data\";\n" +
+	"deleted_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\tdeletedAt\x125\n" +
+	"\alessons\x18\r \x03(\v2\x1b.learning.v1.LessonResponseR\alessons\";\n" +
 	"\x11ClassNameResponse\x12\x12\n" +
 	"\x04uuid\x18\x01 \x01(\tR\x04uuid\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\"K\n" +
@@ -2874,7 +2874,7 @@ const file_learning_proto_rawDesc = "" +
 	"\n" +
 	"updated_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\x129\n" +
 	"\n" +
-	"deleted_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\tdeletedAt\"\xe8\x03\n" +
+	"deleted_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\tdeletedAt\"\xf6\x03\n" +
 	"\x0eLessonResponse\x12\x12\n" +
 	"\x04uuid\x18\x01 \x01(\tR\x04uuid\x12\x1f\n" +
 	"\vmerchant_id\x18\x02 \x01(\tR\n" +
@@ -2894,8 +2894,8 @@ const file_learning_proto_rawDesc = "" +
 	"\n" +
 	"updated_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\x129\n" +
 	"\n" +
-	"deleted_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\tdeletedAt\x123\n" +
-	"\x04data\x18\r \x03(\v2\x1f.learning.v1.LessonItemResponseR\x04data\"<\n" +
+	"deleted_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\tdeletedAt\x12A\n" +
+	"\vlessonitems\x18\r \x03(\v2\x1f.learning.v1.LessonItemResponseR\vlessonitems\"<\n" +
 	"\x12LessonNameResponse\x12\x12\n" +
 	"\x04uuid\x18\x01 \x01(\tR\x04uuid\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\"M\n" +
@@ -3198,7 +3198,7 @@ var file_learning_proto_depIdxs = []int32{
 	33, // 3: learning.v1.ClassResponse.created_at:type_name -> google.protobuf.Timestamp
 	33, // 4: learning.v1.ClassResponse.updated_at:type_name -> google.protobuf.Timestamp
 	33, // 5: learning.v1.ClassResponse.deleted_at:type_name -> google.protobuf.Timestamp
-	8,  // 6: learning.v1.ClassResponse.data:type_name -> learning.v1.LessonResponse
+	8,  // 6: learning.v1.ClassResponse.lessons:type_name -> learning.v1.LessonResponse
 	3,  // 7: learning.v1.ListClassNameResponse.data:type_name -> learning.v1.ClassNameResponse
 	2,  // 8: learning.v1.ListClassResponse.data:type_name -> learning.v1.ClassResponse
 	33, // 9: learning.v1.LessonRequest.created_at:type_name -> google.protobuf.Timestamp
@@ -3207,7 +3207,7 @@ var file_learning_proto_depIdxs = []int32{
 	33, // 12: learning.v1.LessonResponse.created_at:type_name -> google.protobuf.Timestamp
 	33, // 13: learning.v1.LessonResponse.updated_at:type_name -> google.protobuf.Timestamp
 	33, // 14: learning.v1.LessonResponse.deleted_at:type_name -> google.protobuf.Timestamp
-	14, // 15: learning.v1.LessonResponse.data:type_name -> learning.v1.LessonItemResponse
+	14, // 15: learning.v1.LessonResponse.lessonitems:type_name -> learning.v1.LessonItemResponse
 	9,  // 16: learning.v1.ListLessonNameResponse.data:type_name -> learning.v1.LessonNameResponse
 	8,  // 17: learning.v1.ListLessonResponse.data:type_name -> learning.v1.LessonResponse
 	33, // 18: learning.v1.LessonItemRequest.created_at:type_name -> google.protobuf.Timestamp
