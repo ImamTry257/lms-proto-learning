@@ -100,7 +100,7 @@ type ClassRequest struct {
 	MerchantId    string                 `protobuf:"bytes,2,opt,name=merchant_id,json=merchantId,proto3" json:"merchant_id,omitempty"`
 	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
 	Code          string                 `protobuf:"bytes,4,opt,name=code,proto3" json:"code,omitempty"`
-	IsFree        int32                  `protobuf:"varint,5,opt,name=is_free,json=isFree,proto3" json:"is_free,omitempty"`
+	IsFree        string                 `protobuf:"bytes,5,opt,name=is_free,json=isFree,proto3" json:"is_free,omitempty"`
 	Description   string                 `protobuf:"bytes,6,opt,name=description,proto3" json:"description,omitempty"`
 	Status        string                 `protobuf:"bytes,7,opt,name=status,proto3" json:"status,omitempty"`
 	CreatedBy     string                 `protobuf:"bytes,8,opt,name=created_by,json=createdBy,proto3" json:"created_by,omitempty"`
@@ -170,11 +170,11 @@ func (x *ClassRequest) GetCode() string {
 	return ""
 }
 
-func (x *ClassRequest) GetIsFree() int32 {
+func (x *ClassRequest) GetIsFree() string {
 	if x != nil {
 		return x.IsFree
 	}
-	return 0
+	return ""
 }
 
 func (x *ClassRequest) GetDescription() string {
@@ -232,7 +232,7 @@ type ClassResponse struct {
 	MerchantId    string                 `protobuf:"bytes,2,opt,name=merchant_id,json=merchantId,proto3" json:"merchant_id,omitempty"`
 	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
 	Code          string                 `protobuf:"bytes,4,opt,name=code,proto3" json:"code,omitempty"`
-	IsFree        int32                  `protobuf:"varint,5,opt,name=is_free,json=isFree,proto3" json:"is_free,omitempty"`
+	IsFree        string                 `protobuf:"bytes,5,opt,name=is_free,json=isFree,proto3" json:"is_free,omitempty"`
 	Description   string                 `protobuf:"bytes,6,opt,name=description,proto3" json:"description,omitempty"`
 	Status        string                 `protobuf:"bytes,7,opt,name=status,proto3" json:"status,omitempty"`
 	CreatedBy     string                 `protobuf:"bytes,8,opt,name=created_by,json=createdBy,proto3" json:"created_by,omitempty"`
@@ -302,11 +302,11 @@ func (x *ClassResponse) GetCode() string {
 	return ""
 }
 
-func (x *ClassResponse) GetIsFree() int32 {
+func (x *ClassResponse) GetIsFree() string {
 	if x != nil {
 		return x.IsFree
 	}
-	return 0
+	return ""
 }
 
 func (x *ClassResponse) GetDescription() string {
@@ -2786,7 +2786,7 @@ const file_learning_proto_rawDesc = "" +
 	"merchantId\x12\x12\n" +
 	"\x04name\x18\x03 \x01(\tR\x04name\x12\x12\n" +
 	"\x04code\x18\x04 \x01(\tR\x04code\x12\x17\n" +
-	"\ais_free\x18\x05 \x01(\x05R\x06isFree\x12 \n" +
+	"\ais_free\x18\x05 \x01(\tR\x06isFree\x12 \n" +
 	"\vdescription\x18\x06 \x01(\tR\vdescription\x12\x16\n" +
 	"\x06status\x18\a \x01(\tR\x06status\x12\x1d\n" +
 	"\n" +
@@ -2806,7 +2806,7 @@ const file_learning_proto_rawDesc = "" +
 	"merchantId\x12\x12\n" +
 	"\x04name\x18\x03 \x01(\tR\x04name\x12\x12\n" +
 	"\x04code\x18\x04 \x01(\tR\x04code\x12\x17\n" +
-	"\ais_free\x18\x05 \x01(\x05R\x06isFree\x12 \n" +
+	"\ais_free\x18\x05 \x01(\tR\x06isFree\x12 \n" +
 	"\vdescription\x18\x06 \x01(\tR\vdescription\x12\x16\n" +
 	"\x06status\x18\a \x01(\tR\x06status\x12\x1d\n" +
 	"\n" +
