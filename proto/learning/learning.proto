@@ -44,6 +44,7 @@ message ClassResponse {
     google.protobuf.Timestamp created_at = 10;
     google.protobuf.Timestamp updated_at = 11;
     google.protobuf.Timestamp deleted_at = 12;
+    repeated LessonResponse data = 13;
 }
 
 
@@ -100,6 +101,7 @@ message LessonResponse {
     google.protobuf.Timestamp created_at = 10;
     google.protobuf.Timestamp updated_at = 11;
     google.protobuf.Timestamp deleted_at = 12;
+    repeated LessonItemResponse data = 13;
 }
 
 message LessonNameResponse {
