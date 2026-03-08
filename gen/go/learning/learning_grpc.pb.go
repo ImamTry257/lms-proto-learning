@@ -74,16 +74,16 @@ type LearningServiceClient interface {
 	// Lesson
 	GetAllLesson(ctx context.Context, in *ListLessonRequest, opts ...grpc.CallOption) (*ListLessonResponse, error)
 	GetAllLessonName(ctx context.Context, in *ListLessonRequest, opts ...grpc.CallOption) (*ListLessonNameResponse, error)
-	CreateLesson(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error)
-	UpdateLesson(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error)
+	CreateLesson(ctx context.Context, in *LessonRequest, opts ...grpc.CallOption) (*ActionResponse, error)
+	UpdateLesson(ctx context.Context, in *LessonRequest, opts ...grpc.CallOption) (*ActionResponse, error)
 	GetLessonById(ctx context.Context, in *GetByIdRequest, opts ...grpc.CallOption) (*LessonResponse, error)
 	GetLessonByUuid(ctx context.Context, in *GetByUuidRequest, opts ...grpc.CallOption) (*LessonResponse, error)
 	DeleteLesson(ctx context.Context, in *GetByUuidRequest, opts ...grpc.CallOption) (*ActionResponse, error)
 	// Lesson Item
 	GetAllLessonItem(ctx context.Context, in *ListLessonItemRequest, opts ...grpc.CallOption) (*ListLessonItemResponse, error)
 	GetAllLessonItemName(ctx context.Context, in *ListLessonItemRequest, opts ...grpc.CallOption) (*ListLessonItemNameResponse, error)
-	CreateLessonItem(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error)
-	UpdateLessonItem(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error)
+	CreateLessonItem(ctx context.Context, in *LessonItemRequest, opts ...grpc.CallOption) (*ActionResponse, error)
+	UpdateLessonItem(ctx context.Context, in *LessonItemRequest, opts ...grpc.CallOption) (*ActionResponse, error)
 	GetLessonItemById(ctx context.Context, in *GetByIdRequest, opts ...grpc.CallOption) (*LessonItemResponse, error)
 	GetLessonItemByUuid(ctx context.Context, in *GetByUuidRequest, opts ...grpc.CallOption) (*LessonItemResponse, error)
 	DeleteLessonItem(ctx context.Context, in *GetByUuidRequest, opts ...grpc.CallOption) (*ActionResponse, error)
@@ -203,7 +203,7 @@ func (c *learningServiceClient) GetAllLessonName(ctx context.Context, in *ListLe
 	return out, nil
 }
 
-func (c *learningServiceClient) CreateLesson(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error) {
+func (c *learningServiceClient) CreateLesson(ctx context.Context, in *LessonRequest, opts ...grpc.CallOption) (*ActionResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ActionResponse)
 	err := c.cc.Invoke(ctx, LearningService_CreateLesson_FullMethodName, in, out, cOpts...)
@@ -213,7 +213,7 @@ func (c *learningServiceClient) CreateLesson(ctx context.Context, in *ClassReque
 	return out, nil
 }
 
-func (c *learningServiceClient) UpdateLesson(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error) {
+func (c *learningServiceClient) UpdateLesson(ctx context.Context, in *LessonRequest, opts ...grpc.CallOption) (*ActionResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ActionResponse)
 	err := c.cc.Invoke(ctx, LearningService_UpdateLesson_FullMethodName, in, out, cOpts...)
@@ -273,7 +273,7 @@ func (c *learningServiceClient) GetAllLessonItemName(ctx context.Context, in *Li
 	return out, nil
 }
 
-func (c *learningServiceClient) CreateLessonItem(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error) {
+func (c *learningServiceClient) CreateLessonItem(ctx context.Context, in *LessonItemRequest, opts ...grpc.CallOption) (*ActionResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ActionResponse)
 	err := c.cc.Invoke(ctx, LearningService_CreateLessonItem_FullMethodName, in, out, cOpts...)
@@ -283,7 +283,7 @@ func (c *learningServiceClient) CreateLessonItem(ctx context.Context, in *ClassR
 	return out, nil
 }
 
-func (c *learningServiceClient) UpdateLessonItem(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error) {
+func (c *learningServiceClient) UpdateLessonItem(ctx context.Context, in *LessonItemRequest, opts ...grpc.CallOption) (*ActionResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ActionResponse)
 	err := c.cc.Invoke(ctx, LearningService_UpdateLessonItem_FullMethodName, in, out, cOpts...)
@@ -478,16 +478,16 @@ type LearningServiceServer interface {
 	// Lesson
 	GetAllLesson(context.Context, *ListLessonRequest) (*ListLessonResponse, error)
 	GetAllLessonName(context.Context, *ListLessonRequest) (*ListLessonNameResponse, error)
-	CreateLesson(context.Context, *ClassRequest) (*ActionResponse, error)
-	UpdateLesson(context.Context, *ClassRequest) (*ActionResponse, error)
+	CreateLesson(context.Context, *LessonRequest) (*ActionResponse, error)
+	UpdateLesson(context.Context, *LessonRequest) (*ActionResponse, error)
 	GetLessonById(context.Context, *GetByIdRequest) (*LessonResponse, error)
 	GetLessonByUuid(context.Context, *GetByUuidRequest) (*LessonResponse, error)
 	DeleteLesson(context.Context, *GetByUuidRequest) (*ActionResponse, error)
 	// Lesson Item
 	GetAllLessonItem(context.Context, *ListLessonItemRequest) (*ListLessonItemResponse, error)
 	GetAllLessonItemName(context.Context, *ListLessonItemRequest) (*ListLessonItemNameResponse, error)
-	CreateLessonItem(context.Context, *ClassRequest) (*ActionResponse, error)
-	UpdateLessonItem(context.Context, *ClassRequest) (*ActionResponse, error)
+	CreateLessonItem(context.Context, *LessonItemRequest) (*ActionResponse, error)
+	UpdateLessonItem(context.Context, *LessonItemRequest) (*ActionResponse, error)
 	GetLessonItemById(context.Context, *GetByIdRequest) (*LessonItemResponse, error)
 	GetLessonItemByUuid(context.Context, *GetByUuidRequest) (*LessonItemResponse, error)
 	DeleteLessonItem(context.Context, *GetByUuidRequest) (*ActionResponse, error)
@@ -544,10 +544,10 @@ func (UnimplementedLearningServiceServer) GetAllLesson(context.Context, *ListLes
 func (UnimplementedLearningServiceServer) GetAllLessonName(context.Context, *ListLessonRequest) (*ListLessonNameResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllLessonName not implemented")
 }
-func (UnimplementedLearningServiceServer) CreateLesson(context.Context, *ClassRequest) (*ActionResponse, error) {
+func (UnimplementedLearningServiceServer) CreateLesson(context.Context, *LessonRequest) (*ActionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateLesson not implemented")
 }
-func (UnimplementedLearningServiceServer) UpdateLesson(context.Context, *ClassRequest) (*ActionResponse, error) {
+func (UnimplementedLearningServiceServer) UpdateLesson(context.Context, *LessonRequest) (*ActionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateLesson not implemented")
 }
 func (UnimplementedLearningServiceServer) GetLessonById(context.Context, *GetByIdRequest) (*LessonResponse, error) {
@@ -565,10 +565,10 @@ func (UnimplementedLearningServiceServer) GetAllLessonItem(context.Context, *Lis
 func (UnimplementedLearningServiceServer) GetAllLessonItemName(context.Context, *ListLessonItemRequest) (*ListLessonItemNameResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllLessonItemName not implemented")
 }
-func (UnimplementedLearningServiceServer) CreateLessonItem(context.Context, *ClassRequest) (*ActionResponse, error) {
+func (UnimplementedLearningServiceServer) CreateLessonItem(context.Context, *LessonItemRequest) (*ActionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateLessonItem not implemented")
 }
-func (UnimplementedLearningServiceServer) UpdateLessonItem(context.Context, *ClassRequest) (*ActionResponse, error) {
+func (UnimplementedLearningServiceServer) UpdateLessonItem(context.Context, *LessonItemRequest) (*ActionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateLessonItem not implemented")
 }
 func (UnimplementedLearningServiceServer) GetLessonItemById(context.Context, *GetByIdRequest) (*LessonItemResponse, error) {
@@ -806,7 +806,7 @@ func _LearningService_GetAllLessonName_Handler(srv interface{}, ctx context.Cont
 }
 
 func _LearningService_CreateLesson_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ClassRequest)
+	in := new(LessonRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -818,13 +818,13 @@ func _LearningService_CreateLesson_Handler(srv interface{}, ctx context.Context,
 		FullMethod: LearningService_CreateLesson_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LearningServiceServer).CreateLesson(ctx, req.(*ClassRequest))
+		return srv.(LearningServiceServer).CreateLesson(ctx, req.(*LessonRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _LearningService_UpdateLesson_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ClassRequest)
+	in := new(LessonRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -836,7 +836,7 @@ func _LearningService_UpdateLesson_Handler(srv interface{}, ctx context.Context,
 		FullMethod: LearningService_UpdateLesson_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LearningServiceServer).UpdateLesson(ctx, req.(*ClassRequest))
+		return srv.(LearningServiceServer).UpdateLesson(ctx, req.(*LessonRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -932,7 +932,7 @@ func _LearningService_GetAllLessonItemName_Handler(srv interface{}, ctx context.
 }
 
 func _LearningService_CreateLessonItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ClassRequest)
+	in := new(LessonItemRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -944,13 +944,13 @@ func _LearningService_CreateLessonItem_Handler(srv interface{}, ctx context.Cont
 		FullMethod: LearningService_CreateLessonItem_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LearningServiceServer).CreateLessonItem(ctx, req.(*ClassRequest))
+		return srv.(LearningServiceServer).CreateLessonItem(ctx, req.(*LessonItemRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _LearningService_UpdateLessonItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ClassRequest)
+	in := new(LessonItemRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -962,7 +962,7 @@ func _LearningService_UpdateLessonItem_Handler(srv interface{}, ctx context.Cont
 		FullMethod: LearningService_UpdateLessonItem_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LearningServiceServer).UpdateLessonItem(ctx, req.(*ClassRequest))
+		return srv.(LearningServiceServer).UpdateLessonItem(ctx, req.(*LessonItemRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

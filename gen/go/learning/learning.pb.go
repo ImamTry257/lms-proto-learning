@@ -3104,7 +3104,7 @@ const file_learning_proto_rawDesc = "" +
 	"\x0eGetByIdRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"#\n" +
 	"\x10GetByUuidRequest\x12\x0f\n" +
-	"\x03id_\x18\x01 \x01(\tR\x02id2\xd6\x16\n" +
+	"\x03id_\x18\x01 \x01(\tR\x02id2\xe2\x16\n" +
 	"\x0fLearningService\x12G\n" +
 	"\x06GetAll\x12\x1d.learning.v1.ListClassRequest\x1a\x1e.learning.v1.ListClassResponse\x12T\n" +
 	"\x0fGetAllClassName\x12\x1d.learning.v1.ListClassRequest\x1a\".learning.v1.ListClassNameResponse\x12@\n" +
@@ -3114,16 +3114,16 @@ const file_learning_proto_rawDesc = "" +
 	"\tGetByUuid\x12\x1d.learning.v1.GetByUuidRequest\x1a\x1a.learning.v1.ClassResponse\x12D\n" +
 	"\x06Delete\x12\x1d.learning.v1.GetByUuidRequest\x1a\x1b.learning.v1.ActionResponse\x12O\n" +
 	"\fGetAllLesson\x12\x1e.learning.v1.ListLessonRequest\x1a\x1f.learning.v1.ListLessonResponse\x12W\n" +
-	"\x10GetAllLessonName\x12\x1e.learning.v1.ListLessonRequest\x1a#.learning.v1.ListLessonNameResponse\x12F\n" +
-	"\fCreateLesson\x12\x19.learning.v1.ClassRequest\x1a\x1b.learning.v1.ActionResponse\x12F\n" +
-	"\fUpdateLesson\x12\x19.learning.v1.ClassRequest\x1a\x1b.learning.v1.ActionResponse\x12I\n" +
+	"\x10GetAllLessonName\x12\x1e.learning.v1.ListLessonRequest\x1a#.learning.v1.ListLessonNameResponse\x12G\n" +
+	"\fCreateLesson\x12\x1a.learning.v1.LessonRequest\x1a\x1b.learning.v1.ActionResponse\x12G\n" +
+	"\fUpdateLesson\x12\x1a.learning.v1.LessonRequest\x1a\x1b.learning.v1.ActionResponse\x12I\n" +
 	"\rGetLessonById\x12\x1b.learning.v1.GetByIdRequest\x1a\x1b.learning.v1.LessonResponse\x12M\n" +
 	"\x0fGetLessonByUuid\x12\x1d.learning.v1.GetByUuidRequest\x1a\x1b.learning.v1.LessonResponse\x12J\n" +
 	"\fDeleteLesson\x12\x1d.learning.v1.GetByUuidRequest\x1a\x1b.learning.v1.ActionResponse\x12[\n" +
 	"\x10GetAllLessonItem\x12\".learning.v1.ListLessonItemRequest\x1a#.learning.v1.ListLessonItemResponse\x12c\n" +
-	"\x14GetAllLessonItemName\x12\".learning.v1.ListLessonItemRequest\x1a'.learning.v1.ListLessonItemNameResponse\x12J\n" +
-	"\x10CreateLessonItem\x12\x19.learning.v1.ClassRequest\x1a\x1b.learning.v1.ActionResponse\x12J\n" +
-	"\x10UpdateLessonItem\x12\x19.learning.v1.ClassRequest\x1a\x1b.learning.v1.ActionResponse\x12Q\n" +
+	"\x14GetAllLessonItemName\x12\".learning.v1.ListLessonItemRequest\x1a'.learning.v1.ListLessonItemNameResponse\x12O\n" +
+	"\x10CreateLessonItem\x12\x1e.learning.v1.LessonItemRequest\x1a\x1b.learning.v1.ActionResponse\x12O\n" +
+	"\x10UpdateLessonItem\x12\x1e.learning.v1.LessonItemRequest\x1a\x1b.learning.v1.ActionResponse\x12Q\n" +
 	"\x11GetLessonItemById\x12\x1b.learning.v1.GetByIdRequest\x1a\x1f.learning.v1.LessonItemResponse\x12U\n" +
 	"\x13GetLessonItemByUuid\x12\x1d.learning.v1.GetByUuidRequest\x1a\x1f.learning.v1.LessonItemResponse\x12N\n" +
 	"\x10DeleteLessonItem\x12\x1d.learning.v1.GetByUuidRequest\x1a\x1b.learning.v1.ActionResponse\x12R\n" +
@@ -3243,15 +3243,15 @@ var file_learning_proto_depIdxs = []int32{
 	32, // 48: learning.v1.LearningService.Delete:input_type -> learning.v1.GetByUuidRequest
 	6,  // 49: learning.v1.LearningService.GetAllLesson:input_type -> learning.v1.ListLessonRequest
 	6,  // 50: learning.v1.LearningService.GetAllLessonName:input_type -> learning.v1.ListLessonRequest
-	1,  // 51: learning.v1.LearningService.CreateLesson:input_type -> learning.v1.ClassRequest
-	1,  // 52: learning.v1.LearningService.UpdateLesson:input_type -> learning.v1.ClassRequest
+	7,  // 51: learning.v1.LearningService.CreateLesson:input_type -> learning.v1.LessonRequest
+	7,  // 52: learning.v1.LearningService.UpdateLesson:input_type -> learning.v1.LessonRequest
 	31, // 53: learning.v1.LearningService.GetLessonById:input_type -> learning.v1.GetByIdRequest
 	32, // 54: learning.v1.LearningService.GetLessonByUuid:input_type -> learning.v1.GetByUuidRequest
 	32, // 55: learning.v1.LearningService.DeleteLesson:input_type -> learning.v1.GetByUuidRequest
 	12, // 56: learning.v1.LearningService.GetAllLessonItem:input_type -> learning.v1.ListLessonItemRequest
 	12, // 57: learning.v1.LearningService.GetAllLessonItemName:input_type -> learning.v1.ListLessonItemRequest
-	1,  // 58: learning.v1.LearningService.CreateLessonItem:input_type -> learning.v1.ClassRequest
-	1,  // 59: learning.v1.LearningService.UpdateLessonItem:input_type -> learning.v1.ClassRequest
+	13, // 58: learning.v1.LearningService.CreateLessonItem:input_type -> learning.v1.LessonItemRequest
+	13, // 59: learning.v1.LearningService.UpdateLessonItem:input_type -> learning.v1.LessonItemRequest
 	31, // 60: learning.v1.LearningService.GetLessonItemById:input_type -> learning.v1.GetByIdRequest
 	32, // 61: learning.v1.LearningService.GetLessonItemByUuid:input_type -> learning.v1.GetByUuidRequest
 	32, // 62: learning.v1.LearningService.DeleteLessonItem:input_type -> learning.v1.GetByUuidRequest

@@ -324,8 +324,8 @@ service LearningService {
     // Lesson
     rpc GetAllLesson(ListLessonRequest) returns (ListLessonResponse);
     rpc GetAllLessonName(ListLessonRequest) returns (ListLessonNameResponse);
-    rpc CreateLesson(ClassRequest) returns (ActionResponse);
-    rpc UpdateLesson(ClassRequest) returns (ActionResponse);
+    rpc CreateLesson(LessonRequest) returns (ActionResponse);
+    rpc UpdateLesson(LessonRequest) returns (ActionResponse);
     rpc GetLessonById(GetByIdRequest) returns (LessonResponse);
     rpc GetLessonByUuid(GetByUuidRequest) returns (LessonResponse);
     rpc DeleteLesson(GetByUuidRequest) returns (ActionResponse);
@@ -333,8 +333,8 @@ service LearningService {
     // Lesson Item
     rpc GetAllLessonItem(ListLessonItemRequest) returns (ListLessonItemResponse);
     rpc GetAllLessonItemName(ListLessonItemRequest) returns (ListLessonItemNameResponse);
-    rpc CreateLessonItem(ClassRequest) returns (ActionResponse);
-    rpc UpdateLessonItem(ClassRequest) returns (ActionResponse);
+    rpc CreateLessonItem(LessonItemRequest) returns (ActionResponse);
+    rpc UpdateLessonItem(LessonItemRequest) returns (ActionResponse);
     rpc GetLessonItemById(GetByIdRequest) returns (LessonItemResponse);
     rpc GetLessonItemByUuid(GetByUuidRequest) returns (LessonItemResponse);
     rpc DeleteLessonItem(GetByUuidRequest) returns (ActionResponse);
