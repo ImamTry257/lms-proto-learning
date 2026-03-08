@@ -90,16 +90,16 @@ type LearningServiceClient interface {
 	// Content
 	GetAllContent(ctx context.Context, in *ListContentRequest, opts ...grpc.CallOption) (*ListContentResponse, error)
 	GetAllContentName(ctx context.Context, in *ListContentRequest, opts ...grpc.CallOption) (*ListContentNameResponse, error)
-	CreateContent(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error)
-	UpdateContent(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error)
+	CreateContent(ctx context.Context, in *ContentRequest, opts ...grpc.CallOption) (*ActionResponse, error)
+	UpdateContent(ctx context.Context, in *ContentRequest, opts ...grpc.CallOption) (*ActionResponse, error)
 	GetContentById(ctx context.Context, in *GetByIdRequest, opts ...grpc.CallOption) (*ContentResponse, error)
 	GetContentByUuid(ctx context.Context, in *GetByUuidRequest, opts ...grpc.CallOption) (*ContentResponse, error)
 	DeleteContent(ctx context.Context, in *GetByUuidRequest, opts ...grpc.CallOption) (*ActionResponse, error)
 	// ContentCategories
 	GetAllContentCategories(ctx context.Context, in *ListContentCategoriesRequest, opts ...grpc.CallOption) (*ListContentCategoriesResponse, error)
 	GetAllContentCategoriesName(ctx context.Context, in *ListContentCategoriesRequest, opts ...grpc.CallOption) (*ListContentCategoriesNameResponse, error)
-	CreateContentCategories(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error)
-	UpdateContentCategories(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error)
+	CreateContentCategories(ctx context.Context, in *ContentCategoriesRequest, opts ...grpc.CallOption) (*ActionResponse, error)
+	UpdateContentCategories(ctx context.Context, in *ContentCategoriesRequest, opts ...grpc.CallOption) (*ActionResponse, error)
 	GetContentCategoriesById(ctx context.Context, in *GetByIdRequest, opts ...grpc.CallOption) (*ContentCategoriesResponse, error)
 	GetContentCategoriesByUuid(ctx context.Context, in *GetByUuidRequest, opts ...grpc.CallOption) (*ContentCategoriesResponse, error)
 	DeleteContentCategories(ctx context.Context, in *GetByUuidRequest, opts ...grpc.CallOption) (*ActionResponse, error)
@@ -343,7 +343,7 @@ func (c *learningServiceClient) GetAllContentName(ctx context.Context, in *ListC
 	return out, nil
 }
 
-func (c *learningServiceClient) CreateContent(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error) {
+func (c *learningServiceClient) CreateContent(ctx context.Context, in *ContentRequest, opts ...grpc.CallOption) (*ActionResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ActionResponse)
 	err := c.cc.Invoke(ctx, LearningService_CreateContent_FullMethodName, in, out, cOpts...)
@@ -353,7 +353,7 @@ func (c *learningServiceClient) CreateContent(ctx context.Context, in *ClassRequ
 	return out, nil
 }
 
-func (c *learningServiceClient) UpdateContent(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error) {
+func (c *learningServiceClient) UpdateContent(ctx context.Context, in *ContentRequest, opts ...grpc.CallOption) (*ActionResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ActionResponse)
 	err := c.cc.Invoke(ctx, LearningService_UpdateContent_FullMethodName, in, out, cOpts...)
@@ -413,7 +413,7 @@ func (c *learningServiceClient) GetAllContentCategoriesName(ctx context.Context,
 	return out, nil
 }
 
-func (c *learningServiceClient) CreateContentCategories(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error) {
+func (c *learningServiceClient) CreateContentCategories(ctx context.Context, in *ContentCategoriesRequest, opts ...grpc.CallOption) (*ActionResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ActionResponse)
 	err := c.cc.Invoke(ctx, LearningService_CreateContentCategories_FullMethodName, in, out, cOpts...)
@@ -423,7 +423,7 @@ func (c *learningServiceClient) CreateContentCategories(ctx context.Context, in 
 	return out, nil
 }
 
-func (c *learningServiceClient) UpdateContentCategories(ctx context.Context, in *ClassRequest, opts ...grpc.CallOption) (*ActionResponse, error) {
+func (c *learningServiceClient) UpdateContentCategories(ctx context.Context, in *ContentCategoriesRequest, opts ...grpc.CallOption) (*ActionResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ActionResponse)
 	err := c.cc.Invoke(ctx, LearningService_UpdateContentCategories_FullMethodName, in, out, cOpts...)
@@ -494,16 +494,16 @@ type LearningServiceServer interface {
 	// Content
 	GetAllContent(context.Context, *ListContentRequest) (*ListContentResponse, error)
 	GetAllContentName(context.Context, *ListContentRequest) (*ListContentNameResponse, error)
-	CreateContent(context.Context, *ClassRequest) (*ActionResponse, error)
-	UpdateContent(context.Context, *ClassRequest) (*ActionResponse, error)
+	CreateContent(context.Context, *ContentRequest) (*ActionResponse, error)
+	UpdateContent(context.Context, *ContentRequest) (*ActionResponse, error)
 	GetContentById(context.Context, *GetByIdRequest) (*ContentResponse, error)
 	GetContentByUuid(context.Context, *GetByUuidRequest) (*ContentResponse, error)
 	DeleteContent(context.Context, *GetByUuidRequest) (*ActionResponse, error)
 	// ContentCategories
 	GetAllContentCategories(context.Context, *ListContentCategoriesRequest) (*ListContentCategoriesResponse, error)
 	GetAllContentCategoriesName(context.Context, *ListContentCategoriesRequest) (*ListContentCategoriesNameResponse, error)
-	CreateContentCategories(context.Context, *ClassRequest) (*ActionResponse, error)
-	UpdateContentCategories(context.Context, *ClassRequest) (*ActionResponse, error)
+	CreateContentCategories(context.Context, *ContentCategoriesRequest) (*ActionResponse, error)
+	UpdateContentCategories(context.Context, *ContentCategoriesRequest) (*ActionResponse, error)
 	GetContentCategoriesById(context.Context, *GetByIdRequest) (*ContentCategoriesResponse, error)
 	GetContentCategoriesByUuid(context.Context, *GetByUuidRequest) (*ContentCategoriesResponse, error)
 	DeleteContentCategories(context.Context, *GetByUuidRequest) (*ActionResponse, error)
@@ -586,10 +586,10 @@ func (UnimplementedLearningServiceServer) GetAllContent(context.Context, *ListCo
 func (UnimplementedLearningServiceServer) GetAllContentName(context.Context, *ListContentRequest) (*ListContentNameResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllContentName not implemented")
 }
-func (UnimplementedLearningServiceServer) CreateContent(context.Context, *ClassRequest) (*ActionResponse, error) {
+func (UnimplementedLearningServiceServer) CreateContent(context.Context, *ContentRequest) (*ActionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateContent not implemented")
 }
-func (UnimplementedLearningServiceServer) UpdateContent(context.Context, *ClassRequest) (*ActionResponse, error) {
+func (UnimplementedLearningServiceServer) UpdateContent(context.Context, *ContentRequest) (*ActionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateContent not implemented")
 }
 func (UnimplementedLearningServiceServer) GetContentById(context.Context, *GetByIdRequest) (*ContentResponse, error) {
@@ -607,10 +607,10 @@ func (UnimplementedLearningServiceServer) GetAllContentCategories(context.Contex
 func (UnimplementedLearningServiceServer) GetAllContentCategoriesName(context.Context, *ListContentCategoriesRequest) (*ListContentCategoriesNameResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllContentCategoriesName not implemented")
 }
-func (UnimplementedLearningServiceServer) CreateContentCategories(context.Context, *ClassRequest) (*ActionResponse, error) {
+func (UnimplementedLearningServiceServer) CreateContentCategories(context.Context, *ContentCategoriesRequest) (*ActionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateContentCategories not implemented")
 }
-func (UnimplementedLearningServiceServer) UpdateContentCategories(context.Context, *ClassRequest) (*ActionResponse, error) {
+func (UnimplementedLearningServiceServer) UpdateContentCategories(context.Context, *ContentCategoriesRequest) (*ActionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateContentCategories not implemented")
 }
 func (UnimplementedLearningServiceServer) GetContentCategoriesById(context.Context, *GetByIdRequest) (*ContentCategoriesResponse, error) {
@@ -1058,7 +1058,7 @@ func _LearningService_GetAllContentName_Handler(srv interface{}, ctx context.Con
 }
 
 func _LearningService_CreateContent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ClassRequest)
+	in := new(ContentRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1070,13 +1070,13 @@ func _LearningService_CreateContent_Handler(srv interface{}, ctx context.Context
 		FullMethod: LearningService_CreateContent_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LearningServiceServer).CreateContent(ctx, req.(*ClassRequest))
+		return srv.(LearningServiceServer).CreateContent(ctx, req.(*ContentRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _LearningService_UpdateContent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ClassRequest)
+	in := new(ContentRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1088,7 +1088,7 @@ func _LearningService_UpdateContent_Handler(srv interface{}, ctx context.Context
 		FullMethod: LearningService_UpdateContent_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LearningServiceServer).UpdateContent(ctx, req.(*ClassRequest))
+		return srv.(LearningServiceServer).UpdateContent(ctx, req.(*ContentRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1184,7 +1184,7 @@ func _LearningService_GetAllContentCategoriesName_Handler(srv interface{}, ctx c
 }
 
 func _LearningService_CreateContentCategories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ClassRequest)
+	in := new(ContentCategoriesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1196,13 +1196,13 @@ func _LearningService_CreateContentCategories_Handler(srv interface{}, ctx conte
 		FullMethod: LearningService_CreateContentCategories_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LearningServiceServer).CreateContentCategories(ctx, req.(*ClassRequest))
+		return srv.(LearningServiceServer).CreateContentCategories(ctx, req.(*ContentCategoriesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _LearningService_UpdateContentCategories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ClassRequest)
+	in := new(ContentCategoriesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1214,7 +1214,7 @@ func _LearningService_UpdateContentCategories_Handler(srv interface{}, ctx conte
 		FullMethod: LearningService_UpdateContentCategories_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LearningServiceServer).UpdateContentCategories(ctx, req.(*ClassRequest))
+		return srv.(LearningServiceServer).UpdateContentCategories(ctx, req.(*ContentCategoriesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

@@ -1445,8 +1445,8 @@ func (x *LessonItemNameResponse) GetName() string {
 }
 
 type ListLessonItemNameResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Data          []*LessonNameResponse  `protobuf:"bytes,1,rep,name=data,proto3" json:"data,omitempty"`
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Data          []*LessonItemNameResponse `protobuf:"bytes,1,rep,name=data,proto3" json:"data,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1481,7 +1481,7 @@ func (*ListLessonItemNameResponse) Descriptor() ([]byte, []int) {
 	return file_learning_proto_rawDescGZIP(), []int{16}
 }
 
-func (x *ListLessonItemNameResponse) GetData() []*LessonNameResponse {
+func (x *ListLessonItemNameResponse) GetData() []*LessonItemNameResponse {
 	if x != nil {
 		return x.Data
 	}
@@ -1490,7 +1490,7 @@ func (x *ListLessonItemNameResponse) GetData() []*LessonNameResponse {
 
 type ListLessonItemResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Data          []*LessonResponse      `protobuf:"bytes,1,rep,name=data,proto3" json:"data,omitempty"`
+	Data          []*LessonItemResponse  `protobuf:"bytes,1,rep,name=data,proto3" json:"data,omitempty"`
 	Page          int32                  `protobuf:"varint,2,opt,name=page,proto3" json:"page,omitempty"`
 	Size          int32                  `protobuf:"varint,3,opt,name=size,proto3" json:"size,omitempty"`
 	TotalItems    int32                  `protobuf:"varint,4,opt,name=total_items,json=totalItems,proto3" json:"total_items,omitempty"`
@@ -1529,7 +1529,7 @@ func (*ListLessonItemResponse) Descriptor() ([]byte, []int) {
 	return file_learning_proto_rawDescGZIP(), []int{17}
 }
 
-func (x *ListLessonItemResponse) GetData() []*LessonResponse {
+func (x *ListLessonItemResponse) GetData() []*LessonItemResponse {
 	if x != nil {
 		return x.Data
 	}
@@ -2955,11 +2955,11 @@ const file_learning_proto_rawDesc = "" +
 	"deleted_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\tdeletedAt\"@\n" +
 	"\x16LessonItemNameResponse\x12\x12\n" +
 	"\x04uuid\x18\x01 \x01(\tR\x04uuid\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\"Q\n" +
-	"\x1aListLessonItemNameResponse\x123\n" +
-	"\x04data\x18\x01 \x03(\v2\x1f.learning.v1.LessonNameResponseR\x04data\"\xb3\x01\n" +
-	"\x16ListLessonItemResponse\x12/\n" +
-	"\x04data\x18\x01 \x03(\v2\x1b.learning.v1.LessonResponseR\x04data\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\"U\n" +
+	"\x1aListLessonItemNameResponse\x127\n" +
+	"\x04data\x18\x01 \x03(\v2#.learning.v1.LessonItemNameResponseR\x04data\"\xb7\x01\n" +
+	"\x16ListLessonItemResponse\x123\n" +
+	"\x04data\x18\x01 \x03(\v2\x1f.learning.v1.LessonItemResponseR\x04data\x12\x12\n" +
 	"\x04page\x18\x02 \x01(\x05R\x04page\x12\x12\n" +
 	"\x04size\x18\x03 \x01(\x05R\x04size\x12\x1f\n" +
 	"\vtotal_items\x18\x04 \x01(\x05R\n" +
@@ -3104,7 +3104,7 @@ const file_learning_proto_rawDesc = "" +
 	"\x0eGetByIdRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"#\n" +
 	"\x10GetByUuidRequest\x12\x0f\n" +
-	"\x03id_\x18\x01 \x01(\tR\x02id2\xe2\x16\n" +
+	"\x03id_\x18\x01 \x01(\tR\x02id2\xfe\x16\n" +
 	"\x0fLearningService\x12G\n" +
 	"\x06GetAll\x12\x1d.learning.v1.ListClassRequest\x1a\x1e.learning.v1.ListClassResponse\x12T\n" +
 	"\x0fGetAllClassName\x12\x1d.learning.v1.ListClassRequest\x1a\".learning.v1.ListClassNameResponse\x12@\n" +
@@ -3128,16 +3128,16 @@ const file_learning_proto_rawDesc = "" +
 	"\x13GetLessonItemByUuid\x12\x1d.learning.v1.GetByUuidRequest\x1a\x1f.learning.v1.LessonItemResponse\x12N\n" +
 	"\x10DeleteLessonItem\x12\x1d.learning.v1.GetByUuidRequest\x1a\x1b.learning.v1.ActionResponse\x12R\n" +
 	"\rGetAllContent\x12\x1f.learning.v1.ListContentRequest\x1a .learning.v1.ListContentResponse\x12Z\n" +
-	"\x11GetAllContentName\x12\x1f.learning.v1.ListContentRequest\x1a$.learning.v1.ListContentNameResponse\x12G\n" +
-	"\rCreateContent\x12\x19.learning.v1.ClassRequest\x1a\x1b.learning.v1.ActionResponse\x12G\n" +
-	"\rUpdateContent\x12\x19.learning.v1.ClassRequest\x1a\x1b.learning.v1.ActionResponse\x12K\n" +
+	"\x11GetAllContentName\x12\x1f.learning.v1.ListContentRequest\x1a$.learning.v1.ListContentNameResponse\x12I\n" +
+	"\rCreateContent\x12\x1b.learning.v1.ContentRequest\x1a\x1b.learning.v1.ActionResponse\x12I\n" +
+	"\rUpdateContent\x12\x1b.learning.v1.ContentRequest\x1a\x1b.learning.v1.ActionResponse\x12K\n" +
 	"\x0eGetContentById\x12\x1b.learning.v1.GetByIdRequest\x1a\x1c.learning.v1.ContentResponse\x12O\n" +
 	"\x10GetContentByUuid\x12\x1d.learning.v1.GetByUuidRequest\x1a\x1c.learning.v1.ContentResponse\x12K\n" +
 	"\rDeleteContent\x12\x1d.learning.v1.GetByUuidRequest\x1a\x1b.learning.v1.ActionResponse\x12p\n" +
 	"\x17GetAllContentCategories\x12).learning.v1.ListContentCategoriesRequest\x1a*.learning.v1.ListContentCategoriesResponse\x12x\n" +
-	"\x1bGetAllContentCategoriesName\x12).learning.v1.ListContentCategoriesRequest\x1a..learning.v1.ListContentCategoriesNameResponse\x12Q\n" +
-	"\x17CreateContentCategories\x12\x19.learning.v1.ClassRequest\x1a\x1b.learning.v1.ActionResponse\x12Q\n" +
-	"\x17UpdateContentCategories\x12\x19.learning.v1.ClassRequest\x1a\x1b.learning.v1.ActionResponse\x12_\n" +
+	"\x1bGetAllContentCategoriesName\x12).learning.v1.ListContentCategoriesRequest\x1a..learning.v1.ListContentCategoriesNameResponse\x12]\n" +
+	"\x17CreateContentCategories\x12%.learning.v1.ContentCategoriesRequest\x1a\x1b.learning.v1.ActionResponse\x12]\n" +
+	"\x17UpdateContentCategories\x12%.learning.v1.ContentCategoriesRequest\x1a\x1b.learning.v1.ActionResponse\x12_\n" +
 	"\x18GetContentCategoriesById\x12\x1b.learning.v1.GetByIdRequest\x1a&.learning.v1.ContentCategoriesResponse\x12c\n" +
 	"\x1aGetContentCategoriesByUuid\x12\x1d.learning.v1.GetByUuidRequest\x1a&.learning.v1.ContentCategoriesResponse\x12U\n" +
 	"\x17DeleteContentCategories\x12\x1d.learning.v1.GetByUuidRequest\x1a\x1b.learning.v1.ActionResponseBGZEgithub.com/ImamTry257/lms-proto-learning/gen/go/learning;learningpbv1b\x06proto3"
@@ -3216,8 +3216,8 @@ var file_learning_proto_depIdxs = []int32{
 	33, // 21: learning.v1.LessonItemResponse.created_at:type_name -> google.protobuf.Timestamp
 	33, // 22: learning.v1.LessonItemResponse.updated_at:type_name -> google.protobuf.Timestamp
 	33, // 23: learning.v1.LessonItemResponse.deleted_at:type_name -> google.protobuf.Timestamp
-	9,  // 24: learning.v1.ListLessonItemNameResponse.data:type_name -> learning.v1.LessonNameResponse
-	8,  // 25: learning.v1.ListLessonItemResponse.data:type_name -> learning.v1.LessonResponse
+	15, // 24: learning.v1.ListLessonItemNameResponse.data:type_name -> learning.v1.LessonItemNameResponse
+	14, // 25: learning.v1.ListLessonItemResponse.data:type_name -> learning.v1.LessonItemResponse
 	33, // 26: learning.v1.ContentRequest.created_at:type_name -> google.protobuf.Timestamp
 	33, // 27: learning.v1.ContentRequest.updated_at:type_name -> google.protobuf.Timestamp
 	33, // 28: learning.v1.ContentRequest.deleted_at:type_name -> google.protobuf.Timestamp
@@ -3257,15 +3257,15 @@ var file_learning_proto_depIdxs = []int32{
 	32, // 62: learning.v1.LearningService.DeleteLessonItem:input_type -> learning.v1.GetByUuidRequest
 	18, // 63: learning.v1.LearningService.GetAllContent:input_type -> learning.v1.ListContentRequest
 	18, // 64: learning.v1.LearningService.GetAllContentName:input_type -> learning.v1.ListContentRequest
-	1,  // 65: learning.v1.LearningService.CreateContent:input_type -> learning.v1.ClassRequest
-	1,  // 66: learning.v1.LearningService.UpdateContent:input_type -> learning.v1.ClassRequest
+	19, // 65: learning.v1.LearningService.CreateContent:input_type -> learning.v1.ContentRequest
+	19, // 66: learning.v1.LearningService.UpdateContent:input_type -> learning.v1.ContentRequest
 	31, // 67: learning.v1.LearningService.GetContentById:input_type -> learning.v1.GetByIdRequest
 	32, // 68: learning.v1.LearningService.GetContentByUuid:input_type -> learning.v1.GetByUuidRequest
 	32, // 69: learning.v1.LearningService.DeleteContent:input_type -> learning.v1.GetByUuidRequest
 	24, // 70: learning.v1.LearningService.GetAllContentCategories:input_type -> learning.v1.ListContentCategoriesRequest
 	24, // 71: learning.v1.LearningService.GetAllContentCategoriesName:input_type -> learning.v1.ListContentCategoriesRequest
-	1,  // 72: learning.v1.LearningService.CreateContentCategories:input_type -> learning.v1.ClassRequest
-	1,  // 73: learning.v1.LearningService.UpdateContentCategories:input_type -> learning.v1.ClassRequest
+	25, // 72: learning.v1.LearningService.CreateContentCategories:input_type -> learning.v1.ContentCategoriesRequest
+	25, // 73: learning.v1.LearningService.UpdateContentCategories:input_type -> learning.v1.ContentCategoriesRequest
 	31, // 74: learning.v1.LearningService.GetContentCategoriesById:input_type -> learning.v1.GetByIdRequest
 	32, // 75: learning.v1.LearningService.GetContentCategoriesByUuid:input_type -> learning.v1.GetByUuidRequest
 	32, // 76: learning.v1.LearningService.DeleteContentCategories:input_type -> learning.v1.GetByUuidRequest

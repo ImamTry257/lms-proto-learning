@@ -166,11 +166,11 @@ message LessonItemNameResponse {
 }
 
 message ListLessonItemNameResponse {
-    repeated LessonNameResponse data = 1;
+    repeated LessonItemNameResponse data = 1;
 }
 
 message ListLessonItemResponse {
-    repeated LessonResponse data = 1;
+    repeated LessonItemResponse data = 1;
     int32 page = 2;
     int32 size = 3;
     int32 total_items = 4;
@@ -342,8 +342,8 @@ service LearningService {
     // Content
     rpc GetAllContent(ListContentRequest) returns (ListContentResponse);
     rpc GetAllContentName(ListContentRequest) returns (ListContentNameResponse);
-    rpc CreateContent(ClassRequest) returns (ActionResponse);
-    rpc UpdateContent(ClassRequest) returns (ActionResponse);
+    rpc CreateContent(ContentRequest) returns (ActionResponse);
+    rpc UpdateContent(ContentRequest) returns (ActionResponse);
     rpc GetContentById(GetByIdRequest) returns (ContentResponse);
     rpc GetContentByUuid(GetByUuidRequest) returns (ContentResponse);
     rpc DeleteContent(GetByUuidRequest) returns (ActionResponse);
@@ -351,8 +351,8 @@ service LearningService {
     // ContentCategories
     rpc GetAllContentCategories(ListContentCategoriesRequest) returns (ListContentCategoriesResponse);
     rpc GetAllContentCategoriesName(ListContentCategoriesRequest) returns (ListContentCategoriesNameResponse);
-    rpc CreateContentCategories(ClassRequest) returns (ActionResponse);
-    rpc UpdateContentCategories(ClassRequest) returns (ActionResponse);
+    rpc CreateContentCategories(ContentCategoriesRequest) returns (ActionResponse);
+    rpc UpdateContentCategories(ContentCategoriesRequest) returns (ActionResponse);
     rpc GetContentCategoriesById(GetByIdRequest) returns (ContentCategoriesResponse);
     rpc GetContentCategoriesByUuid(GetByUuidRequest) returns (ContentCategoriesResponse);
     rpc DeleteContentCategories(GetByUuidRequest) returns (ActionResponse);
