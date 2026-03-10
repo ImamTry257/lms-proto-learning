@@ -545,6 +545,7 @@ type ListLessonRequest struct {
 	Size          int32                  `protobuf:"varint,2,opt,name=size,proto3" json:"size,omitempty"`
 	Search        string                 `protobuf:"bytes,3,opt,name=search,proto3" json:"search,omitempty"`
 	Status        string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	ClassId       string                 `protobuf:"bytes,5,opt,name=class_id,json=classId,proto3" json:"class_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -603,6 +604,13 @@ func (x *ListLessonRequest) GetSearch() string {
 func (x *ListLessonRequest) GetStatus() string {
 	if x != nil {
 		return x.Status
+	}
+	return ""
+}
+
+func (x *ListLessonRequest) GetClassId() string {
+	if x != nil {
+		return x.ClassId
 	}
 	return ""
 }
@@ -1058,7 +1066,8 @@ type ListLessonItemRequest struct {
 	Size          int32                  `protobuf:"varint,2,opt,name=size,proto3" json:"size,omitempty"`
 	Search        string                 `protobuf:"bytes,3,opt,name=search,proto3" json:"search,omitempty"`
 	Status        string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
-	LessonId      string                 `protobuf:"bytes,5,opt,name=lesson_id,json=lessonId,proto3" json:"lesson_id,omitempty"`
+	ClassId       string                 `protobuf:"bytes,5,opt,name=class_id,json=classId,proto3" json:"class_id,omitempty"`
+	LessonId      string                 `protobuf:"bytes,6,opt,name=lesson_id,json=lessonId,proto3" json:"lesson_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1117,6 +1126,13 @@ func (x *ListLessonItemRequest) GetSearch() string {
 func (x *ListLessonItemRequest) GetStatus() string {
 	if x != nil {
 		return x.Status
+	}
+	return ""
+}
+
+func (x *ListLessonItemRequest) GetClassId() string {
+	if x != nil {
+		return x.ClassId
 	}
 	return ""
 }
@@ -1566,13 +1582,16 @@ func (x *ListLessonItemResponse) GetTotalPages() int32 {
 
 // CONTENT
 type ListContentRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Page          int32                  `protobuf:"varint,1,opt,name=page,proto3" json:"page,omitempty"`
-	Size          int32                  `protobuf:"varint,2,opt,name=size,proto3" json:"size,omitempty"`
-	Search        string                 `protobuf:"bytes,3,opt,name=search,proto3" json:"search,omitempty"`
-	Status        string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	Page                int32                  `protobuf:"varint,1,opt,name=page,proto3" json:"page,omitempty"`
+	Size                int32                  `protobuf:"varint,2,opt,name=size,proto3" json:"size,omitempty"`
+	Search              string                 `protobuf:"bytes,3,opt,name=search,proto3" json:"search,omitempty"`
+	Status              string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	ClassId             string                 `protobuf:"bytes,5,opt,name=class_id,json=classId,proto3" json:"class_id,omitempty"`
+	LessonId            string                 `protobuf:"bytes,6,opt,name=lesson_id,json=lessonId,proto3" json:"lesson_id,omitempty"`
+	ContentCategoriesId string                 `protobuf:"bytes,7,opt,name=content_categories_id,json=contentCategoriesId,proto3" json:"content_categories_id,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
 }
 
 func (x *ListContentRequest) Reset() {
@@ -1629,6 +1648,27 @@ func (x *ListContentRequest) GetSearch() string {
 func (x *ListContentRequest) GetStatus() string {
 	if x != nil {
 		return x.Status
+	}
+	return ""
+}
+
+func (x *ListContentRequest) GetClassId() string {
+	if x != nil {
+		return x.ClassId
+	}
+	return ""
+}
+
+func (x *ListContentRequest) GetLessonId() string {
+	if x != nil {
+		return x.LessonId
+	}
+	return ""
+}
+
+func (x *ListContentRequest) GetContentCategoriesId() string {
+	if x != nil {
+		return x.ContentCategoriesId
 	}
 	return ""
 }
@@ -2124,6 +2164,8 @@ type ListContentCategoriesRequest struct {
 	Size          int32                  `protobuf:"varint,2,opt,name=size,proto3" json:"size,omitempty"`
 	Search        string                 `protobuf:"bytes,3,opt,name=search,proto3" json:"search,omitempty"`
 	Status        string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	ClassId       string                 `protobuf:"bytes,5,opt,name=class_id,json=classId,proto3" json:"class_id,omitempty"`
+	LessonId      string                 `protobuf:"bytes,6,opt,name=lesson_id,json=lessonId,proto3" json:"lesson_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2182,6 +2224,20 @@ func (x *ListContentCategoriesRequest) GetSearch() string {
 func (x *ListContentCategoriesRequest) GetStatus() string {
 	if x != nil {
 		return x.Status
+	}
+	return ""
+}
+
+func (x *ListContentCategoriesRequest) GetClassId() string {
+	if x != nil {
+		return x.ClassId
+	}
+	return ""
+}
+
+func (x *ListContentCategoriesRequest) GetLessonId() string {
+	if x != nil {
+		return x.LessonId
 	}
 	return ""
 }
@@ -2849,12 +2905,13 @@ const file_learning_proto_rawDesc = "" +
 	"\vtotal_items\x18\x04 \x01(\x05R\n" +
 	"totalItems\x12\x1f\n" +
 	"\vtotal_pages\x18\x05 \x01(\x05R\n" +
-	"totalPages\"k\n" +
+	"totalPages\"\x86\x01\n" +
 	"\x11ListLessonRequest\x12\x12\n" +
 	"\x04page\x18\x01 \x01(\x05R\x04page\x12\x12\n" +
 	"\x04size\x18\x02 \x01(\x05R\x04size\x12\x16\n" +
 	"\x06search\x18\x03 \x01(\tR\x06search\x12\x16\n" +
-	"\x06status\x18\x04 \x01(\tR\x06status\"\xb2\x03\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12\x19\n" +
+	"\bclass_id\x18\x05 \x01(\tR\aclassId\"\xb2\x03\n" +
 	"\rLessonRequest\x12\x12\n" +
 	"\x04uuid\x18\x01 \x01(\tR\x04uuid\x12\x1f\n" +
 	"\vmerchant_id\x18\x02 \x01(\tR\n" +
@@ -2908,13 +2965,14 @@ const file_learning_proto_rawDesc = "" +
 	"\vtotal_items\x18\x04 \x01(\x05R\n" +
 	"totalItems\x12\x1f\n" +
 	"\vtotal_pages\x18\x05 \x01(\x05R\n" +
-	"totalPages\"\x8c\x01\n" +
+	"totalPages\"\xa7\x01\n" +
 	"\x15ListLessonItemRequest\x12\x12\n" +
 	"\x04page\x18\x01 \x01(\x05R\x04page\x12\x12\n" +
 	"\x04size\x18\x02 \x01(\x05R\x04size\x12\x16\n" +
 	"\x06search\x18\x03 \x01(\tR\x06search\x12\x16\n" +
-	"\x06status\x18\x04 \x01(\tR\x06status\x12\x1b\n" +
-	"\tlesson_id\x18\x05 \x01(\tR\blessonId\"\xb2\x03\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12\x19\n" +
+	"\bclass_id\x18\x05 \x01(\tR\aclassId\x12\x1b\n" +
+	"\tlesson_id\x18\x06 \x01(\tR\blessonId\"\xb2\x03\n" +
 	"\x11LessonItemRequest\x12\x12\n" +
 	"\x04uuid\x18\x01 \x01(\tR\x04uuid\x12\x1b\n" +
 	"\tlesson_id\x18\x02 \x01(\tR\blessonId\x12\x19\n" +
@@ -2965,12 +3023,15 @@ const file_learning_proto_rawDesc = "" +
 	"\vtotal_items\x18\x04 \x01(\x05R\n" +
 	"totalItems\x12\x1f\n" +
 	"\vtotal_pages\x18\x05 \x01(\x05R\n" +
-	"totalPages\"l\n" +
+	"totalPages\"\xd8\x01\n" +
 	"\x12ListContentRequest\x12\x12\n" +
 	"\x04page\x18\x01 \x01(\x05R\x04page\x12\x12\n" +
 	"\x04size\x18\x02 \x01(\x05R\x04size\x12\x16\n" +
 	"\x06search\x18\x03 \x01(\tR\x06search\x12\x16\n" +
-	"\x06status\x18\x04 \x01(\tR\x06status\"\x90\x04\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12\x19\n" +
+	"\bclass_id\x18\x05 \x01(\tR\aclassId\x12\x1b\n" +
+	"\tlesson_id\x18\x06 \x01(\tR\blessonId\x122\n" +
+	"\x15content_categories_id\x18\a \x01(\tR\x13contentCategoriesId\"\x90\x04\n" +
 	"\x0eContentRequest\x12\x12\n" +
 	"\x04uuid\x18\x01 \x01(\tR\x04uuid\x12\x1f\n" +
 	"\vmerchant_id\x18\x02 \x01(\tR\n" +
@@ -3033,12 +3094,14 @@ const file_learning_proto_rawDesc = "" +
 	"\vtotal_items\x18\x04 \x01(\x05R\n" +
 	"totalItems\x12\x1f\n" +
 	"\vtotal_pages\x18\x05 \x01(\x05R\n" +
-	"totalPages\"v\n" +
+	"totalPages\"\xae\x01\n" +
 	"\x1cListContentCategoriesRequest\x12\x12\n" +
 	"\x04page\x18\x01 \x01(\x05R\x04page\x12\x12\n" +
 	"\x04size\x18\x02 \x01(\x05R\x04size\x12\x16\n" +
 	"\x06search\x18\x03 \x01(\tR\x06search\x12\x16\n" +
-	"\x06status\x18\x04 \x01(\tR\x06status\"\xf9\x03\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12\x19\n" +
+	"\bclass_id\x18\x05 \x01(\tR\aclassId\x12\x1b\n" +
+	"\tlesson_id\x18\x06 \x01(\tR\blessonId\"\xf9\x03\n" +
 	"\x18ContentCategoriesRequest\x12\x12\n" +
 	"\x04uuid\x18\x01 \x01(\tR\x04uuid\x12\x1f\n" +
 	"\vmerchant_id\x18\x02 \x01(\tR\n" +

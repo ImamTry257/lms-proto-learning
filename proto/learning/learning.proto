@@ -71,6 +71,7 @@ message ListLessonRequest {
     int32 size = 2;
     string search = 3;
     string status = 4;
+    string class_id = 5;
 }
 
 message LessonRequest {
@@ -127,7 +128,8 @@ message ListLessonItemRequest {
     int32 size = 2;
     string search = 3;
     string status = 4;
-    string lesson_id = 5;
+    string class_id = 5;
+    string lesson_id = 6;
 }
 
 message LessonItemRequest {
@@ -183,6 +185,9 @@ message ListContentRequest {
     int32 size = 2;
     string search = 3;
     string status = 4;
+    string class_id = 5;
+    string lesson_id = 6;
+    string content_categories_id = 7;
 }
 
 message ContentRequest {
@@ -244,6 +249,8 @@ message ListContentCategoriesRequest {
     int32 size = 2;
     string search = 3;
     string status = 4;
+    string class_id = 5;
+    string lesson_id = 6;
 }
 
 message ContentCategoriesRequest {
